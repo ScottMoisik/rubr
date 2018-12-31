@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rubr">
+      <UniqueIdentifier>{60058C7C-4C3C-8D0D-F528-7310E13E090F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rubr\Events">
+      <UniqueIdentifier>{44E55914-B09A-D209-398F-CCE0A543C90D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr.h" />
+    <ClInclude Include="src\Rubr\App.h">
+      <Filter>Rubr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\Core.h">
+      <Filter>Rubr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\EntryPoint.h">
+      <Filter>Rubr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\Events\AppEvents.h">
+      <Filter>Rubr\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\Events\Event.h">
+      <Filter>Rubr\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\Events\KeyEvent.h">
+      <Filter>Rubr\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\Events\MouseEvent.h">
+      <Filter>Rubr\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\Layer.h">
+      <Filter>Rubr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\LayerStack.h">
+      <Filter>Rubr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\Log.h">
+      <Filter>Rubr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rubr\Window.h">
+      <Filter>Rubr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rubrpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rubr\App.cpp">
+      <Filter>Rubr</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rubr\Layer.cpp">
+      <Filter>Rubr</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rubr\LayerStack.cpp">
+      <Filter>Rubr</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rubr\Log.cpp">
+      <Filter>Rubr</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rubrpch.cpp" />
+  </ItemGroup>
+</Project>

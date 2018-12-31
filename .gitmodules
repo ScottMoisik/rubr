@@ -1,0 +1,6 @@
+[submodule "Rubr/vendor/spdlog"]
+	path = Rubr/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "Rubr/vendor/GLFW"]
+	path = Rubr/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
