@@ -24,15 +24,12 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-<<<<<<< HEAD
 bin/
 bin-int/
 
 # Files
 *.user
 
-=======
->>>>>>> d6aca66f3cf827afecf18aad9a4f5a3c458371c5
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
