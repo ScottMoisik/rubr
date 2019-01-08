@@ -12,8 +12,12 @@ workspace "Rubr"
 	-- Include directories relative to root folder
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "Rubr/vendor/GLFW/include"
+	IncludeDir["Glad"] = "Rubr/vendor/Glad/include"
+	IncludeDir["Eigen"] = "Rubr/vendor/Eigen"
 
 	include "Rubr/vendor/GLFW"
+	include "Rubr/vendor/Glad"
+
 	project "Rubr"
 
 		location "Rubr"
@@ -34,11 +38,13 @@ workspace "Rubr"
 		includedirs {
 			"%{prj.name}/src",
 			"%{prj.name}/vendor/spdlog/include",
-			"%{IncludeDir.GLFW}"
+			"%{IncludeDir.GLFW}",
+			"%{IncludeDir.Glad}"
 		}
 
 		links {
 			"GLFW",
+			"Glad",
 			"opengl32.lib"
 		}
 
@@ -49,7 +55,8 @@ workspace "Rubr"
 
 			defines {
 				"RUBR_PLATFORM_WINDOWS",
-				"RUBR_BUILD_DLL"
+				"RUBR_BUILD_DLL",
+				"GLFW_INCLUDE_NONE"
 			}
 
 			postbuildcommands {
@@ -137,8 +144,11 @@ workspace "Rubr"
 
 		includedirs {
 			"Rubr/vendor/spdlog/include",
-			"Rubr/vendor/Eigen",
-			"Rubr/src",
+			"Rubr/vendor/matplotlib-cpp",
+			"Rubr/vendor/",
+			"C:/Python37/include",
+			"C:/Python37/Lib/site-packages/numpy/core/include",
+			"Rubr/src"
 		}
 
 		filter "system:windows"
@@ -150,8 +160,13 @@ workspace "Rubr"
 				"RUBR_PLATFORM_WINDOWS"
 			}
 
+	libdirs {
+		"C:/Python37/libs"
+	}
+
 	links {
-		"Rubr"
+		"Rubr",
+		"python37.lib"
 	}
 
 	filter "configurations:Debug"

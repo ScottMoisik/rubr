@@ -4,7 +4,8 @@
 #include "Events/AppEvents.h"
 #include "Rubr/Log.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
+
 
 
 

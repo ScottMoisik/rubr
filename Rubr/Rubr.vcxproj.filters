@@ -40,6 +40,9 @@
     <ClInclude Include="src\Rubr\Events\MouseEvent.h">
       <Filter>Rubr\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Rubr\Gnuplot.h">
+      <Filter>Rubr</Filter>
+    </ClInclude>
     <ClInclude Include="src\Rubr\Layer.h">
       <Filter>Rubr</Filter>
     </ClInclude>
@@ -59,6 +62,9 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Rubr\App.cpp">
+      <Filter>Rubr</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rubr\Gnuplot.cpp">
       <Filter>Rubr</Filter>
     </ClCompile>
     <ClCompile Include="src\Rubr\Layer.cpp">

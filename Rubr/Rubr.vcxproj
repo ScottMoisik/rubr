@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>rubrpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>RUBR_PLATFORM_WINDOWS;RUBR_BUILD_DLL;RUBR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RUBR_PLATFORM_WINDOWS;RUBR_BUILD_DLL;GLFW_INCLUDE_NONE;RUBR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -103,8 +103,8 @@ IF EXIST ..\bin\Debug-windows-x86_64\Rubr\Rubr.dll\ (xcopy /Q /E /Y /I ..\bin\De
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>rubrpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>RUBR_PLATFORM_WINDOWS;RUBR_BUILD_DLL;RUBR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RUBR_PLATFORM_WINDOWS;RUBR_BUILD_DLL;GLFW_INCLUDE_NONE;RUBR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -127,8 +127,8 @@ IF EXIST ..\bin\Release-windows-x86_64\Rubr\Rubr.dll\ (xcopy /Q /E /Y /I ..\bin\
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>rubrpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>RUBR_PLATFORM_WINDOWS;RUBR_BUILD_DLL;RUBR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RUBR_PLATFORM_WINDOWS;RUBR_BUILD_DLL;GLFW_INCLUDE_NONE;RUBR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -156,6 +156,7 @@ IF EXIST ..\bin\Dist-windows-x86_64\Rubr\Rubr.dll\ (xcopy /Q /E /Y /I ..\bin\Dis
     <ClInclude Include="src\Rubr\Events\Event.h" />
     <ClInclude Include="src\Rubr\Events\KeyEvent.h" />
     <ClInclude Include="src\Rubr\Events\MouseEvent.h" />
+    <ClInclude Include="src\Rubr\Gnuplot.h" />
     <ClInclude Include="src\Rubr\Layer.h" />
     <ClInclude Include="src\Rubr\LayerStack.h" />
     <ClInclude Include="src\Rubr\Log.h" />
@@ -165,6 +166,7 @@ IF EXIST ..\bin\Dist-windows-x86_64\Rubr\Rubr.dll\ (xcopy /Q /E /Y /I ..\bin\Dis
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Rubr\App.cpp" />
+    <ClCompile Include="src\Rubr\Gnuplot.cpp" />
     <ClCompile Include="src\Rubr\Layer.cpp" />
     <ClCompile Include="src\Rubr\LayerStack.cpp" />
     <ClCompile Include="src\Rubr\Log.cpp" />
@@ -175,6 +177,9 @@ IF EXIST ..\bin\Dist-windows-x86_64\Rubr\Rubr.dll\ (xcopy /Q /E /Y /I ..\bin\Dis
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\Glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

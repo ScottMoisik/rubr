@@ -2,9 +2,15 @@
 
 #include "CSVread.h"
 #include <Eigen/Dense>
+#include <Eigen/Core>
+#include "matplotlibcpp.h"
+#include "Rubr/Gnuplot.h"
 
 
 using Eigen::MatrixXd;
+using Eigen::Map;
+namespace plt = matplotlibcpp;
+
 
 class ExampleLayer : public Rubr::Layer {
 public: 
@@ -29,23 +35,8 @@ public:
 	Stats() {
 		PushLayer(new ExampleLayer());
 
-
 		std::ifstream file("C:/dev/Rubr/Stats/src/test.csv");
-		
-		/*
-		char data[100];
-		file >> data;
-		RUBR_INFO(data);
-		*/
-
-		MatrixXd m(2, 2);
-		m(0, 0) = 3;
-		m(1, 0) = 2.5;
-		m(0, 1) = -1;
-		m(1, 1) = m(1, 0) + m(0, 1);
-		std::cout << m << std::endl;
-		
-		
+				
 
 		if (file.is_open()) {
 			//Count the number of lines
@@ -73,6 +64,7 @@ public:
 			int rIdx = 0;
 
 			MatrixXd data(numRows, numCols);
+			std::cout << data << std::endl;
 
 			//Read each data line and store it into the data matrix
 			while (loop != CSVIterator()) {
@@ -87,11 +79,16 @@ public:
 				rIdx++;
 				++loop;
 			}
-
+			std::cout << data << std::endl;
+			std::cout << data.row(0) << std::endl;
+			 
 			file.close();
+
+			data.transposeInPlace();
+
+			Rubr::Gnuplot::plot(data.col(0).data(), data.rows());
 		}
 
-		
 	}
 	~Stats() {}
 };
