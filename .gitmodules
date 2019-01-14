@@ -7,3 +7,6 @@
 [submodule "Rubr/vendor/matplotlib-cpp"]
 	path = Rubr/vendor/matplotlib-cpp
 	url = https://github.com/ScottMoisik/matplotlib-cpp
+[submodule "Rubr/vendor/imgui"]
+	path = Rubr/vendor/imgui
+	url = https://github.com/ocornut/imgui
