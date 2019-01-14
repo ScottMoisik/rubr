@@ -15,14 +15,12 @@ public:
 };
 
 
-
-
-
-
 class Sandbox : public Rubr::App {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Rubr::ImGuiLayer());
+		
 	}
 	~Sandbox() {}
 };

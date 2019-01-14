@@ -13,7 +13,12 @@ namespace Rubr {
 
 #define BIND_EVENT_FN(x) std::bind(&App::x, this, std::placeholders::_1)
 
+	App* App::s_Instance = nullptr;
+
 	App::App() {
+		RUBR_CORE_ASSERT(!s_Instance, "Application already exists!");
+		s_Instance = this;
+
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 	}
@@ -22,10 +27,12 @@ namespace Rubr {
 
 	void App::PushLayer(Layer* layer) {
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void App::PushOverlay(Layer* layer) {
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 
 	void App::OnEvent(Event& e) {

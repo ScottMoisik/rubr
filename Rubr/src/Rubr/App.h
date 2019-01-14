@@ -20,6 +20,9 @@ namespace Rubr {
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
+		inline Window& GetWindow() { return *m_Window; }
+
+		inline static App& Get() { return *s_Instance; }
 
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
@@ -28,6 +31,9 @@ namespace Rubr {
 		bool m_Running = true;
 
 		LayerStack m_LayerStack;
+
+	private:
+		static App* s_Instance;
 	};
 
 	//To be defined in client
