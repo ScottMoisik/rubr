@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Rubr/Layer.h"
+#include "Rubr/Events/AppEvents.h"
+#include "Rubr/Events/KeyEvent.h"
+#include "Rubr/Events/MouseEvent.h"
 
 namespace Rubr {
 	class RUBR_API ImGuiLayer : public Layer {
@@ -12,6 +15,15 @@ namespace Rubr {
 		void OnDetach();
 		void OnUpdate();
 		void OnEvent(Event& event);
+	private:
+		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
+		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
+		bool OnMouseMovedEvent(MouseMovedEvent& e);
+		bool OnMouseScrolledEvent(MouseScrolledEvent& e);
+		bool OnKeyPressedEvent(KeyPressedEvent& e);
+		bool OnKeyReleasedEvent(KeyReleasedEvent& e);
+		bool OnKeyTypedEvent(KeyTypedEvent& e);
+		bool OnWindowResizeEvent(WindowResizeEvent& e);
 	private:
 		float m_Time = 0.0f;
  	};
